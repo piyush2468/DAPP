@@ -1,0 +1,13 @@
+.btn{
+    width:90px;
+    margin-left: 7px;
+}
+.container{
+    border: 5px lightseagreen solid;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.alert{
+    margin-top: 15px;
+    margin-bottom: 0px;
+}

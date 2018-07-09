@@ -1,0 +1,95 @@
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-8">
+             <h1>{{title}}</h1>
+        </div>
+        <div class="col-md-4">
+            <div class="alert alert-success alert-dismissable" *ngIf="msg">
+            <a href="#" class="close" (click)="clickMe()">&times;</a>
+           {{msg}}
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <hr>     
+    <h2>Create data:</h2>
+    <form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" 
+        name="name" [(ngModel)]="model.name" placeholder="Enter your movie name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="position">Position:</label>
+        <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="position"
+        name="position" [(ngModel)]="model.position" placeholder="Enter your movies Director">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-sm-2" for="position">Duration:</label>
+        <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="position"
+        name="position" [(ngModel)]="model.position" placeholder="Enter your movies Duration">
+        </div>
+    </div>
+
+    <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="addEmployee()">Save</button>
+        </div>
+    </div>
+    </form>
+    <h2>Read data & (Delete data):</h2>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th width=400>Name</th>
+        <th width=400>Director</th>
+        <th width=250>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i=index">
+        <td>{{employee.name}}</td>
+        <td>{{employee.position}}</td>
+        <td>
+            <a class="btn btn-success" (click)="editEmployee(i)">Edit</a>
+            <a class="btn btn-danger" (click)="deleteEmployee(i)">Delete</a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+   <h2>Update data:</h2>
+    <form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" 
+        name="name" [(ngModel)]="model2.name" placeholder="Enter your movies name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="position">Position:</label>
+        <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="position"
+        name="position" [(ngModel)]="model2.position" placeholder="Enter your movie Director">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-sm-2" for="Duration">Duration:</label>
+        <div class="col-sm-10"> 
+        <input type="text" class="form-control" id="Duration"
+        name="position" [(ngModel)]="model2.position" placeholder="Enter your movie Duration">
+        </div>
+        </div>
+    <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="updateEmployee()">Update</button>
+        </div>
+    </div>
+    </form>
+</div>
